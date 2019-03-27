@@ -1,0 +1,42 @@
+<div class="modal-body">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+  <h1 class="profile-underline">New Emergency Transfer Summary (Form 34L-D)</h1>
+  </br>
+
+  <%= form_for @patient do |f| %>
+    <div class="field">
+      <%= f.label :first_name, 'First Name:  ' %>
+      <%= f.text_field :first_name, :required => true, autofocus: true %>
+    </div>
+    </br>
+    <div class="field">
+      <%= f.label :middle_name, 'Middle Name:  ' %>
+      <%= f.text_field :middle_name %>
+    </div>
+    </br>
+    <div class="field">
+      <%= f.label :last_name, 'Last Name:  ' %>
+      <%= f.text_field :last_name, :required => true %>
+    </div>
+    </br>
+    <div class="field">
+      <%= f.label :mr, 'Medical Record:  ' %>
+      <%= f.text_field :mr, :required => true %>
+    </div>
+    </br>
+    <div class="field ">
+      <%= f.label :dob, 'Date of Birth:  ' %>
+      <%= f.text_field :dob, value: Date.today, :required => true, class: "date datepicker", id: 'datetimepicker1' %>
+    </div>
+    </br>
+    <div class="field">
+      <%= f.label :gender, 'Gender:  ' %>
+      <%= f.select(:gender, Patient.genders.keys.map {|gender| [gender.titleize, gender]}) %>
+    </div>
+    </br>
+    <div class="actions">
+      <%= f.submit "Submit Transfer Summary", class: 'btn btn-success' %>
+    </div>
+  <% end %>
+</div>

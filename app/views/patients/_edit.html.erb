@@ -1,0 +1,168 @@
+ <div class="modal-body">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+  <h1 class="profile-underline">Edit FBI</h1>
+  </br>
+
+  <%= form_for @fbi do |f| %>
+
+    <div class="field">
+      <%= f.label :name %>:&nbsp;&nbsp;
+      <%= f.text_field :name, :value => @fbi.name, :required => true, autofocus: true %>
+    </div>
+    </br>
+    <div class="field">
+      <%= f.label :email %>:&nbsp;&nbsp;
+      <%= f.email_field :email, :value => @fbi.email%>
+    </div>
+    </br>
+    <div class="form-group">
+      <%= f.label :manager_on_duty %>:&nbsp;&nbsp;
+      <%= f.text_field :manager, :value => @fbi.manager, :required => true %>
+    </div>
+    </br>
+    <div class="form-group">
+      <%= f.label :guest_name %>:&nbsp;&nbsp;
+      <%= f.text_field :guest_name, :value => @fbi.guest_name%>
+    </div>
+    </br>
+    <div class="form-group">
+      <%= f.label :guest_phone %>:&nbsp;&nbsp;
+      <%= f.text_field :guest_phone, :value => @fbi.guest_phone  %>
+    </div>
+    </br>
+    <div class="form-group">
+      <%= f.label :guest_address %>:&nbsp;&nbsp;
+      <%= f.text_field :guest_address, :value => @fbi.guest_address  %>
+    </div>
+    </br>
+    <div class="form-group">
+      <%= f.label :guest_email %>:&nbsp;&nbsp;
+      <%= f.text_field :guest_email, :value => @fbi.guest_email  %>
+    </div>
+    </br>
+    <div class="form-group">
+      <%= f.label :date_of_incident %>:&nbsp;&nbsp;
+      <%= f.date_field :date_of, :value => @fbi.date_of %>
+    </div>
+    </br>
+    <div class="form-group">
+      <%= f.label :time_of_incedent %>:&nbsp;&nbsp;
+      <%= f.text_field :time_of, :value => @fbi.time_of  %>
+    </div>
+    </br>
+    <div class="form-group">
+      <%= f.label :estimated_date_and_time_of_food_born_illness %>:&nbsp;&nbsp;
+      <%= f.text_field :time_of_illness, :value => @fbi.time_of_illness  %>
+    </div>
+    </br>
+    <div class="form-group">
+      <%= f.label :foods_consumed %>:&nbsp;&nbsp;
+      <%= f.text_field :foods_eaten, :value => @fbi.foods_eaten  %>
+    </div>
+    </br>
+    <div class="form-group">
+      <%= f.label :beverages_consumed %>:&nbsp;&nbsp;
+      <%= f.text_field :beverage_eaten, :value => @fbi.beverage_eaten  %>
+    </div>
+    </br>
+    <div class="form-group">
+      <%= f.label :were_all_types_of_food_ordered_consumed %>?&nbsp;&nbsp;
+      <%= f.check_box :all_items_consumed, :value => @fbi.all_items_consumed %>
+    </div>
+    </br>
+    <div class="form-group">
+      <%= f.label :time_after_eating_at_our_restaurant_when_they_felt_sick %>:&nbsp;&nbsp;
+      <%= f.text_field :time_after, :value => @fbi.time_after  %>
+    </div>
+    </br>
+    <div class="form-group">
+      <%= f.label :what_types_of_symptoms_did_they_have %>?&nbsp;&nbsp;
+      <%= f.text_field :symptoms, :value => @fbi.symptoms  %>
+    </div>
+    </br>
+    <div class="form-group">
+      <%= f.label :how_long_have_they_had_symptoms %>:&nbsp;&nbsp;
+      <%= f.text_field :length_of_symptoms, :value => @fbi.length_of_symptoms  %>
+    </div>
+    </br>
+    <div class="form-group">
+      <%= f.label :did_they_seek_medical_attention %>:&nbsp;&nbsp;
+      <%= f.check_box :medical_attention, :value => @fbi.medical_attention  %>
+    </div>
+    </br>
+    <div class="form-group">
+      <%= f.label :when %>:&nbsp;&nbsp;
+      <%= f.text_field :medical_when, :value => @fbi.medical_when  %>
+    </div>
+    </br>
+    <div class="form-group">
+      <%= f.label :name_of_doctor_or_facility %>:&nbsp;&nbsp;
+      <%= f.text_field :doctor, :value => @fbi.doctor  %>
+    </div>
+    </br>
+    <div class="form-group">
+      <%= f.label :were_they_tested_for_food_borne_illness %>:&nbsp;&nbsp;
+      <%= f.check_box :tested_for_fbi, :value => @fbi.tested_for_fbi %>
+    </div>
+    </br>
+    <div class="form-group">
+      <%= f.label :do_they_have_a_medical_report %>?&nbsp;&nbsp;
+      <%= f.check_box :medical_report, :value => @fbi.medical_report %>
+    </div>
+    </br>
+    <div class="form-group">
+      <%= f.label :main_item_type_consumed %> (Item thought to be the cause):&nbsp;&nbsp;
+      <%= f.text_field :suspected_cause, :value => @fbi.suspected_cause  %>
+    </div>
+    </br>
+    <div class="form-group">
+      <%= f.label :dine %>:&nbsp;&nbsp;
+      <%= f.select :dine, [["Dine In", "dine in"], ["To Go", "to go"], ["Group Meal", "group meal"], ["OLO", "olo"]], :value => @fbi.dine, :prompt => 'Select One' %>
+    </div>
+    </br>
+    <div class="form-group">
+      <%= f.label :action_taken %>:&nbsp;&nbsp;
+      <%= f.text_field :action_taken, :value => @fbi.action_taken  %>
+    </div>
+    </br>
+    <div class="form-group">
+      <%= f.label :did_you_give_any_comp_dollars %>? (If yes, how much?)&nbsp;&nbsp;
+      <%= f.text_field :comp_dollars, :value => @fbi.comp_dollars  %>
+    </div>
+    </br>
+    <div class="form-group">
+      <%= f.label :are_you_suggesting_corp_bucks %>? (If yes, how much?)&nbsp;&nbsp;
+      <%= f.text_field :corp_bucks, :value => @fbi.corp_bucks  %>
+    </div>
+    </br>
+    <div class="form-group" id="location_select" >
+      <%= f.label :location %>:&nbsp;&nbsp;
+      <%= f.select :location, LOCATION_ORDER_STORES, { :include_blank => '-- Select One --' }, id: "location_select", :required => true %>
+    </div>
+    </br>
+
+<!-- Menu Items determined by selected location -->
+
+<!-- Select Location First -->
+    <div class="form-group" id="location_item">
+      <%= f.label :menu_item %>:&nbsp;&nbsp;
+      <!-- Rudy's Menu Items -->
+      <%= f.select :menu_item, Item.where(rudys: true).collect {|p| [ p.name ] }.sort, {:value => @fbi.menu_item}, style: "#{'display:none' if @fbi.location.include?('MF')}", id: "rudys_items" %>
+      <!-- Mighty Fine Menu Items -->
+      <%= f.select :menu_item, Item.where(mighty_fine: true).collect {|p| [ p.name ] }.sort, {:value => @fbi.menu_item}, style: "#{'display:none' if @fbi.location.include?('Rudy')}", id: "mighty_items" %>
+    </div>
+
+<!-- End of Items -->
+    </br>
+    <div class="field">
+      <%= f.label :description_of_comment%>:</br>
+      <%= f.text_area :description, :value => @fbi.description, :required => true, class: 'protest-description'%>
+    </div>
+    </br>
+    <div class="actions">
+      <%= f.submit "Save FBI Update", class: 'btn btn-success' %>
+    </div>
+  <% end %>
+
+</div>

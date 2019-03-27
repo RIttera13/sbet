@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SBET</title>
+    <title>Saint Bernard</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,22 @@
   </head>
 
   <body>
+    <% if flash[:notice] %>
+      <div class="notice alert-success text-center">
+          <%= flash[:notice] %>
+      </div>
+    <% elsif flash[:alert] %>
+      <div class="alert alert-warning text-center">
+          <%= flash[:alert] %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
+  <!-- Modal -->
+    <div class="modal fade" id="mymodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content scroll">
+        </div>
+      </div>
+    </div>
 </html>

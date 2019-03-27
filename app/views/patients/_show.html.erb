@@ -1,0 +1,50 @@
+<div class="modal-body">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+    <h1>Food Born Illness</h1>
+    <p>Name: <%= @fbi.name %> </p>
+    <p>Email: <%= @fbi.email %></p>
+    <p>Manager on Duty: <%= @fbi.manager %></p>
+    <p>Guest Name: <%= @fbi.guest_name %></p>
+    <p>Guest Phone Number: <%= @fbi.guest_phone %></p>
+    <p>Guest Address: <%= @fbi.guest_address %></p>
+    <p>Guest Email: <%= @fbi.guest_email %></p>
+    <p>Date of Incedent: <%= @fbi.date_of.strftime("%m/%d/%Y") %></p>
+    <p>Time of Incedent: <%= @fbi.time_of %></p>
+    <p>Estimated Date/Time of Food Born Illness: <%= @fbi.time_of_illness %></p>
+    <p>Foods Consumed: <%= @fbi.foods_eaten %></p>
+    <p>Beverages Consumed: <%= @fbi.beverage_eaten %></p>
+    <% if @fbi.all_items_consumed == true %>
+      <p>Were All Types of Ordered Food Consumed: Yes</p>
+    <% else %>
+      <p>Were All Types of Ordered Food Consumed: No</p>
+    <% end %>
+    <p>Time after eating they became sick: <%= @fbi.time_after %></p>
+    <p>What symptoms did they have: <%= @fbi.symptoms %></p>
+    <p>How long did the symptoms last: <%= @fbi.length_of_symptoms %></p>
+    <% if @fbi.medical_attention == true %>
+      <p>Did the Complainant Seek Medical Attention: Yes</p>
+    <% else %>
+      <p>Did the Complainant Seek Medical Attention: No</p>
+    <% end %>
+    <p>When did they seek medical attention: <%= @fbi.medical_when %></p>
+    <p>Name of Doctor/Facility Where Treated: <%= @fbi.doctor %></p>
+    <% if @fbi.tested_for_fbi == true %>
+      <p>Were They Tested for Food Borne Illness: Yes</p>
+    <% else %>
+      <p>Were They Tested for Food Borne Illness: No</p>
+    <% end %>
+    <% if @fbi.medical_report == true %>
+      <p>Do They Have a Medical Report: Yes</p>
+    <% else %>
+      <p>Do They Have a Medical Report: No</p>
+    <% end %>
+    <p>Action Taken: <%= @fbi.action_taken %></p>
+    <p>Main Item Type Consumed (Item Thought to be the cause): <%= @fbi.suspected_cause %></p>
+    <p>Dine: <%= @fbi.dine %></p>
+    <p>Give any comp dollars: <%= @fbi.comp_dollars %></p>
+    <p>Give any corp bucks: <%= @fbi.corp_bucks %></p>
+    <p>Location: <%= @fbi.location %></p>
+    <p>Menu Item: <%= @fbi.menu_item %></p>
+    <p>Description: <%= @fbi.description %></p>
+</div>
