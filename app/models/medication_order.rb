@@ -1,7 +1,8 @@
 class MedicationOrder < ApplicationRecord
 
-  belongs_to :patient, :foreign_key => 'medications'
+  belongs_to :patient, optional: true, :foreign_key => 'medications'
   has_one :order_frequency, dependent: :destroy
+  accepts_nested_attributes_for :order_frequency, allow_destroy: true
 
   # The alias for enums are in place to map enums with a different name than the column name in the DB.
   alias_attribute :mass_unit, :unit

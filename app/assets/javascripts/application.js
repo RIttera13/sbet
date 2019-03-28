@@ -10,9 +10,18 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
-//= require activestorage
-//= require turbolinks
 //= require jquery
-//= require bootstrap
+//= require jquery_ujs
+//= require moment
+//= require bootstrap-datetimepicker
+//= require turbolinks
 //= require_tree .
+//= require bootstrap
+//= require filterrific/filterrific-jquery
+//= require activestorage
+$(document).on('turbolinks:load', function() {
+  $(document).ready(function(){
+
+
+  });
+});

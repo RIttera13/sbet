@@ -1,6 +1,6 @@
 class OrderFrequency < ApplicationRecord
 
-  belongs_to :medication_order, :foreign_key => 'frequency'
+  belongs_to :medcation_order, optional: true, :foreign_key => 'medications'
 
   # The alias for enums are in place to map enums with a different name than the column name in the DB.
   alias_attribute :frequency_unit, :unit

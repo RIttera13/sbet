@@ -9,10 +9,10 @@ gem 'rails', '~> 5.2.2'
 gem 'sqlite3', '~> 1.3.6'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
 # Add support for Bootstrap 3
 gem 'bootstrap-sass', '~> 3.4.1'
+# Use SCSS for stylesheets
+gem 'sass-rails', '~> 5.0'
 # Add support for jQuery, some Bootstrap functions require this
 gem 'jquery-rails'
 # Use Uglifier as compressor for JavaScript assets
@@ -26,6 +26,17 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+
+# Add easy and robust filtering
+gem 'filterrific'
+# Allow pagination to limit number or records displayed at one time
+gem 'will_paginate'
+# Allow fast searching through records
+gem 'pg_search'
+# Required for datetimepicker
+gem 'momentjs-rails', '>= 2.9.0'
+# Clean date picker for better UX
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password

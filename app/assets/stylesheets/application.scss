@@ -1,0 +1,87 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import 'bootstrap-datetimepicker';
+
+body {
+  min-width: 900px;
+}
+
+.patient-list {
+  position: absolute;
+  min-width: 1240px;
+  left: 150px;
+  margin: 20px auto auto auto;
+}
+
+.filterrific-periodically-observed {
+  margin-right: 20px;
+}
+
+#filterrific_with_date_of_gte{
+  margin-right: 20px;
+}
+
+.navbar-nav > li > a {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 7px 0 7px 10px;
+}
+
+.fix-table {
+  position: absolute;
+  min-width: 100%;
+  left: 0px;
+  z-index: -1;
+  width: 100%;
+}
+
+.table-content {
+  border-style: solid;
+  display: block;
+  margin: 0 auto;
+  border-radius: 15px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  border-color: #4c66b2;
+  font-size: 35px;
+  max-height: 550px;
+  overflow: scroll;
+}
+
+.patient-list-header-font {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.patient-list-font {
+  font-size: 15px;
+}
+
+.user-delete {
+  margin-left: 9px;
+  margin-right: 15px;
+}
+
+.profile-underline {
+  text-decoration: underline;
+  z-index: -1;
+}

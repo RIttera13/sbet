@@ -1,8 +1,10 @@
 <div class="modal-body">
   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 
-  <h1 class="profile-underline">New Emergency Transfer Summary (Form 34L-D)</h1>
+  <h3 class="profile-underline">New Emergency Transfer Summary (Form 34L-D)</h3>
   </br>
+
+  <h3>Patient:</h3>
 
   <%= form_for @patient do |f| %>
     <div class="field">
@@ -27,14 +29,40 @@
     </br>
     <div class="field ">
       <%= f.label :dob, 'Date of Birth:  ' %>
-      <%= f.text_field :dob, value: Date.today, :required => true, class: "date datepicker", id: 'datetimepicker1' %>
+      <%= f.date_field :dob, :required => true %>
     </div>
     </br>
     <div class="field">
       <%= f.label :gender, 'Gender:  ' %>
-      <%= f.select(:gender, Patient.genders.keys.map {|gender| [gender.titleize, gender]}) %>
+      <%= f.select :gender, Patient.genders.keys.map {|gender| [gender.titleize, gender]} %>
     </div>
     </br>
+    <%= f.fields_for :allergy do |f| %>
+      <div class="field">
+        <%= f.label :description, 'Allergies:  ' %>
+        <%= f.text_area :description %>
+      </div>
+      </br>
+    <% end %>
+    <h3>Admission:</h3>
+    <%= f.fields_for :admission do |f| %>
+      <div class="field">
+        <%= f.label :moment, 'Date/Time:  ' %>
+        <%= f.datetime_select :moment, {order: [:day, :month, :year, :hour, :minute]} %>
+      </div>
+      </br>
+    <% end %>
+
+  <!-- Medications -->
+    <h3>Medications:</h3>
+    <%= f.fields_for :medication_orders do |builder| %>
+      <%= render 'patients/medication_order', f: builder %>
+    <% end %>
+
+    <div class="form-actions">
+      <%= link_to_add_fields "Add Medication", f, :medication_orders, class: 'btn btn-primary' %>
+    </div>
+
     <div class="actions">
       <%= f.submit "Submit Transfer Summary", class: 'btn btn-success' %>
     </div>

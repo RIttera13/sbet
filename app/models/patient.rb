@@ -3,17 +3,33 @@ class Patient < ApplicationRecord
   include PgSearch
 
   has_one :admission, dependent: :destroy
+  accepts_nested_attributes_for :admission, allow_destroy: true
+
   has_one :allergy, dependent: :destroy
+  accepts_nested_attributes_for :allergy, allow_destroy: true
+
   has_one :diagnosis, through: :admission
-  has_one :medication_order, dependent: :destroy
+  accepts_nested_attributes_for :diagnosis, allow_destroy: true
+
+  has_many :medication_orders, dependent: :destroy
+  accepts_nested_attributes_for :medication_orders, allow_destroy: true
+
   has_one :diagnostic_procedure, dependent: :destroy
+  accepts_nested_attributes_for :diagnostic_procedure, allow_destroy: true
+
   has_one :treatment, dependent: :destroy
+  accepts_nested_attributes_for :treatment, allow_destroy: true
 
   # Declaring enum as a Hash instead of an Array allows for easier and safer future changes.
   enum gender: { male: 0, female: 1, other: 2 },
   _prefix: :gender
 
   validates :gender, inclusion: { in: genders.keys }
+  validates :first_name, :presence => true
+  validates :last_name, :presence => true
+  validates :mr, :presence => true
+  validates :dob, :presence => true
+  validates :gender, :presence => true
 
 
   def self.to_csv(options = {})

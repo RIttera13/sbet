@@ -1,3 +1,3 @@
 class Allergy < ApplicationRecord
-  belongs_to :patient, :foreign_key => 'allergies'
+  belongs_to :patient, optional: true, :foreign_key => 'allergies'
 end

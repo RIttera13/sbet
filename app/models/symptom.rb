@@ -1,3 +1,3 @@
 class Symptom < ApplicationRecord
-  belongs_to :admission, :foreign_key => 'symptoms'
+  belongs_to :admission, optional: true, :foreign_key => 'symptoms'
 end

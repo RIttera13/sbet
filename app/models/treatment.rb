@@ -1,3 +1,3 @@
 class Treatment < ApplicationRecord
-  belongs_to :patient, :foreign_key => 'treatments'
+  belongs_to :patient, optional: true, :foreign_key => 'treatments'
 end

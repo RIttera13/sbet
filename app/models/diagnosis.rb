@@ -1,3 +1,3 @@
 class Diagnosis < ApplicationRecord
-  belongs_to :admission, :foreign_key => 'diagnoses'
+  belongs_to :admission, optional: true, :foreign_key => 'diagnoses'
 end
